@@ -1,5 +1,5 @@
-title: MATRP
-description: A template for quickly starting Meteor application development
+title: Aloha Time
+description: A website that helps to match volunteers with organizations, as well as to keep track of volunteering hours.
 google_analytics:
 show_downloads: true
 theme: jekyll-theme-cayman
