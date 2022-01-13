@@ -1,10 +1,10 @@
-title: BowFolios
-description: Profiles, Projects, and Interests for the UH Community
+title: Aloha Time
+description: A website to help keep track of volunteering
 google_analytics:
 show_downloads: false
 theme: jekyll-theme-cayman
 github:
   is_project_page: true
-  repository_url: https://github.com/bowfolios/bowfolios
+  repository_url: https://github.com/aloha-time/aloha-time
 gems:
   - jekyll-mentions
