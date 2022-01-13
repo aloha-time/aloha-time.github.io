@@ -1,347 +1,459 @@
-## Table of contents
 
-* [Overview](#overview)
-* [Deployment](#deployment)
-* [User Guide](#user-guide)
-* [Community Feedback](#community-feedback)
-* [Developer Guide](#developer-guide)
-* [Development History](#development-history)
-* [Continuous Integration](#continuous-integration)
-* [Walkthrough videos](#walkthrough-videos)
-* [Example enhancements](#example-enhancements)
-* [Team](#team)
+![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/landing-page.png)
 
-## Overview
+MATRP, an extension of [meteor-application-template-react](https://ics-software-engineering.github.io/meteor-application-template-react/), is a sample Meteor 2.3 application that illustrates:
 
-BowFolios is an example web application that provides pages to view and (in some cases) modify profiles, projects, and interests. It illustrates various technologies useful to ICS software engineering students, including:
+  * A standard directory layout using 'imports/' as recommended in the [Meteor Guide](https://guide.meteor.com/structure.html)
+  * [Semantic UI React](https://react.semantic-ui.com/) for user interface.
+  * [Uniforms](https://uniforms.tools/) for form development.
+  * [alanning:roles](https://github.com/alanning/meteor-roles) to implement a special "Admin" user.
+  * Authorization, authentication, and registration using built-in Meteor packages.
+  * Initialization of users and data from a settings file.
+  * Alerts regarding success or failure of DB updates using [Sweet Alert](https://sweetalert.js.org/).
+  * Quality assurance using [ESLint](http://eslint.org) with packages to partially enforce the [Meteor Coding Standards](https://guide.meteor.com/code-style.html) and the [AirBnB Javascript Style Guide](https://github.com/airbnb/javascript).
+  * Unit testing for the Mongo collections.
+  * Integration testing for the Meteor methods.
+  * Acceptance testing using [TestCafe](https://testcafe.io/).
+  * Continuous Integration using [GitHub Actions](https://github.com/features/actions).
 
-* [Meteor](https://www.meteor.com/) for Javascript-based implementation of client and server code.
-* [React](https://reactjs.org/) for component-based UI implementation and routing.
-* [Semantic UI React](https://react.semantic-ui.com/) CSS Framework for UI design.
-* [Uniforms](https://uniforms.tools/) for React and Semantic UI-based form design and display.
+The goal of this template is to help you get quickly started doing Meteor development by providing a reasonable directory structure for development and deployment, a set of common extensions to the core framework, and boilerplate code to implement basic page display, navigation, forms, roles, and collection manipulation.
 
-It also provides code that implements a variety of useful design concepts, including:
-
-* Three primary collections (Profiles, Projects, Interests) as well as three "join" Collections (ProfilesInterests, ProfilesProjects, and ProjectsInterests) that implement many-to-many relationships between them.
-* Top-level index pages (Profiles, Interests, and Projects) that show how to manipulate these six collections in various ways.
-* Initialization code to define default Profiles, Interests, and Projects and relations between them.
-* A simple Filter page to illustrate how to perform simple queries on the database and display the results.
-* Use of Meteor Methods to illustrate how to simplify implementation of multiple collection updates.
-* Use of indexes to enforce uniqueness of certain fields in the collections, enabling them to serve as primary keys.
-* Authentication using the built-in Meteor accounts package along with Sign Up and Sign In pages.
-* Authorization examples: certain pages are public (Profiles, Projects, Interests), while other pages require login (AddProject, Filter).
-* Use of Meteor Assets to initialize the database (helpful when initialization exceeds settings file size limits).
-
-## User Guide
-
-This section provides a walkthrough of the Bowfolios user interface and its capabilities.
-
-### Landing Page
-
-The landing page is presented to users when they visit the top-level URL to the site.
-
-![](images/landing-page.png)
-
-### Index pages (Projects, Profiles, Interests)
-
-Bowfolios provides three public pages that present the contents of the database organized in various ways.
-
-The Profiles page shows all the current defined profiles and their associated Projects and Interests:
-
-![](images/profiles-page.png)
-
-The Projects page shows all of the currently defined Projects and their associated Profiles and Interests:
-
-![](images/projects-page.png)
-
-Finally, the Interests page shows all the currently defined Interests, and their associated Profiles and Projects:
-
-![](images/interests-page.png)
-
-
-### Sign in and sign up
-
-Click on the "Login" button in the upper right corner of the navbar, then select "Sign in" to go to the following page and login. You must have been previously registered with the system to use this option:
-
-![](images/signin-page.png)
-
-Alternatively, you can select "Sign up" to go to the following page and register as a new user:
-
-![](images/signup-page.png)
-
-### Home page
-
-After logging in, you are taken to the home page, which presents a form where you can complete and/or update your personal profile:
-
-![](images/home-page.png)
-
-### Add Project page
-
-Once you are logged in, you can define new projects with the Add Project page:
-
-![](images/add-project-page.png)
-
-
-### Filter page
-
-The Filter page provides the ability to query the database and display the results in the page. In this case, the query displays all of the Profiles that match one or more of the specified Interest(s).
-
-![](images/filter-page.png)
-
-## Community Feedback
-
-We are interested in your experience using Bowfolio!  If you would like, please take a couple of minutes to fill out the [Bowfolios Feedback Form](https://forms.gle/hBHdccQEbm4YNfPd6). It contains only five short questions and will help us understand how to improve the system.
-
-## Developer Guide
-
-This section provides information of interest to Meteor developers wishing to use this code base as a basis for their own development tasks.
-
-### Installation
+## Installation
 
 First, [install Meteor](https://www.meteor.com/install).
 
-Second, visit the [Bowfolios application github page](https://github.com/bowfolios/bowfolios), and click the "Use this template" button to create your own repository initialized with a copy of this application. Alternatively, you can download the sources as a zip file or make a fork of the repo.  However you do it, download a copy of the repo to your local computer.
+Second, go to [https://github.com/ics-software-engineering/matrp](https://github.com/ics-software-engineering/matrp), and click the "Use this template" button. Complete the dialog box to create a new repository that you own that is initialized with this template's files.
 
-Third, cd into the bowfolios/app directory and install libraries with:
+Third, go to your newly created repository, and click the "Clone or download" button to download your new GitHub repo to your local file system.  Using [GitHub Desktop](https://desktop.github.com/) is a great choice if you use MacOS or Windows.
+
+Fourth, cd into the app/ directory of your local copy of the repo, and install third party libraries with:
 
 ```
 $ meteor npm install
 ```
 
-Fourth, run the system with:
+## Running the system
+
+Once the libraries are installed, you can run the application by invoking the "start" script in the [package.json file](https://github.com/ics-software-engineering/matrp/blob/master/app/package.json):
 
 ```
 $ meteor npm run start
 ```
 
-If all goes well, the application will appear at [http://localhost:3000](http://localhost:3000).
+The first time you run the app, it will create some default users and data. Here is the output:
 
-### Application Design
-
-Bowfolios is based upon [meteor-application-template-react](https://ics-software-engineering.github.io/meteor-application-template-react/) and [meteor-example-form-react](https://ics-software-engineering.github.io/meteor-example-form-react/). Please use the videos and documentation at those sites to better acquaint yourself with the basic application design and form processing in Bowfolios.
-
-### Data model
-
-As noted above, the Bowfolios data model consists of three "primary" collections (Projects, Profiles, and Interests), as well as three "join" Collections (ProfilesProjects, ProfilesInterests, and ProjectsInterests).  To understand this design choice, consider the situation where you want to specify the projects associated with a Profile.
-
-Design choice #1: Provide a field in Profile collection called "Projects", and fill it with an array of project names. This choice works great when you want to display a Profile and indicate the Projects it's associated with.  But what if you want to go the other direction: display a Project and all of the Profiles associated with it?  Then you have to do a sequential search through all of the Profiles, then do a sequential search through that array field looking for a match.  That's computationally expensive and also just silly.
-
-Design choice #2:  Provide a "join" collection where each document contains two fields: Profile name and Project name. Each entry indicates that there is a relationship between those two entities. Now, to find all the Projects associated with a Profile, just search this collection for all the documents that match the Profile, then extract the Project field. Going the other way is just as easy: to find all the Profiles associated with a Project, just search the collection for all documents matching the Project, then extract the Profile field.
-
-Bowfolios implements Design choice #2 to provide pair-wise relations between all three of its primary collections:
-
-![](images/data-model.png)
-
-The fields in boldface (Email for Profiles, and Name for Projects and Interests) indicate that those fields must have unique values so that they can be used as a primary key for that collection. This constraint is enforced in the schema definition associated with that collection.
+```
+⋊> ~/G/m/app on main ⨯ meteor npm run start
 
 
-## Initialization
+> meteor-application-template-react-production@1.0.3 start /Users/carletonmoore/GitHub/matrp/app
+> meteor --no-release-check --exclude-archs web.browser.legacy,web.cordova --settings ../config/settings.development.json
 
-The [config](https://github.com/bowfolios/bowfolios/tree/master/config) directory is intended to hold settings files.  The repository contains one file: [config/settings.development.json](https://github.com/bowfolios/bowfolios/blob/master/config/settings.development.json).
+[[[[[ ~/GitHub/matrp/app ]]]]]                
 
-This file contains default definitions for Profiles, Projects, and Interests and the relationships between them. Consult the walkthrough video for more details.
+=> Started proxy.                             
+=> Started MongoDB.                           
+I20210801-10:48:51.367(-10)? Creating the default user(s)
+I20210801-10:48:51.504(-10)?   Creating user admin@foo.com with role ADMIN.
+I20210801-10:48:51.537(-10)? Defining ADMIN admin@foo.com with password changeme
+I20210801-10:48:51.544(-10)?   Creating user john@foo.com with role USER.
+I20210801-10:48:51.704(-10)? Defining USER john@foo.com with password changeme
+I20210801-10:48:51.710(-10)? Creating default data.
+I20210801-10:48:51.710(-10)?   Adding: Basket (john@foo.com)
+I20210801-10:48:51.747(-10)?   Adding: Bicycle (john@foo.com)
+I20210801-10:48:51.753(-10)?   Adding: Banana (admin@foo.com)
+I20210801-10:48:51.756(-10)?   Adding: Boogie Board (admin@foo.com)
+I20210801-10:48:51.864(-10)? Monti APM: completed instrumenting the app
+=> Started your app.
 
-The settings.development.json file contains a field called "loadAssetsFile". It is set to false, but if you change it to true, then the data in the file app/private/data.json will also be loaded.  The code to do this illustrates how to initialize a system when the initial data exceeds the size limitations for the settings file.
+=> App running at: http://localhost:3000/
+```
 
 
-### Quality Assurance
+### Viewing the running app
 
-#### ESLint
+If all goes well, the template application will appear at [http://localhost:3000](http://localhost:3000).  You can login using the credentials in [settings.development.json](https://github.com/ics-software-engineering/matrp/blob/master/config/settings.development.json), or else register a new account.
 
-BowFolios includes a [.eslintrc](https://github.com/bowfolios/bowfolios/blob/master/app/.eslintrc) file to define the coding style adhered to in this application. You can invoke ESLint from the command line as follows:
+### ESLint
+
+You can verify that the code obeys our coding standards by running ESLint over the code in the imports/ directory with:
 
 ```
 meteor npm run lint
 ```
 
-Here is sample output indicating that no ESLint errors were detected:
+## Walkthrough
+
+The following sections describe the major features of this template.
+
+### Directory structure
+
+The top-level directory structure is:
 
 ```
-$ meteor npm run lint
+.github/    # holds the GitHub actions and issue templates
+app/        # holds the Meteor application sources
+checklists/ # holds review checklists
+config/     # holds configuration files, such as settings.development.json
+doc/        # holds developer documentation, user guides, etc.
+.gitignore  # don't commit IntelliJ project files, node_modules, and settings.production.json
+```
 
-> bowfolios@ lint /Users/philipjohnson/github/bowfolios/bowfolios/app
-> eslint --quiet --ext .jsx --ext .js ./imports ./tests
+This structure separates documentation files (such as screenshots) and configuration files (such as the settings files) from the actual Meteor application.
 
-$
+The app/ directory has this structure:
+
+```
+.deploy/         # Meteor Up files for deploying the application
+.meteor/         # Meteor files
+
+client/
+  main.html      # The boilerplate HTML with a "root" div to be manipulated by React.
+  main.js        # import startup files.
+  style.css      # local styles.
+
+imports/
+  api/           # Define collections.
+    base/        # The BaseCollection class. Wraps the Mongo collections.
+    matrp/       # Singleton instance holding all the collections.
+    role/        # The defined roles in this application.
+    stuff/       # The Stuffs collection definition.
+    user/        # The different profile collections, Admin and User.
+    utilities/   # Utility function(s)
+  startup/       # Define code to run when system starts up (client-only, server-only, both)
+    client/
+    server/
+  ui/
+    components/  # Contains page elements, some of which could appear on multiple pages.
+    layouts/     # Contains top-level layout (<App> component).
+    pages/       # Contains components for each page.
+
+node_modules/    # managed by npm
+
+public/          # static assets (like images) can go here.
+
+server/
+   main.js       # import the server-side js files.
+   
+tests/           # TestCafe acceptance tests.
+```
+
+### Import conventions
+
+This system adheres to the Meteor guideline of putting all application code in the imports/ directory, and using client/main.js and server/main.js to import the code appropriate for the client and server in an appropriate order.
+
+### Application functionality
+
+The application implements a simple CRUD application for managing "Stuff", which is a Mongo Collection consisting of a name (String), a quantity (Number), and a condition (one of 'excellent', 'good', 'fair', or 'poor').
+
+By default, each user only sees the Stuff that they have created.  However, the settings file enables you to define default accounts.  If you define a user with the role "admin", then that user gets access to a special page which lists all the Stuff defined by all users.
+
+#### Landing page
+
+When you retrieve the app at http://localhost:3000, this is what should be displayed:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/landing-page.png)
+
+The next step is to use the Login menu to either Login to an existing account or register a new account.
+
+#### Login page
+
+Clicking on the Login link, then on the Sign In menu item displays this page:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/signin-page.png)
+
+#### Register page
+
+Alternatively, clicking on the Login link, then on the Sign Up menu item displays this page:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/register-page.png)
+
+
+#### Landing (after Login) page, non-Admin user
+
+Once you log in (either to an existing account or by creating a new one), the navbar changes as follows:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/landing-after-login-page.png)
+
+You can now add new Stuff documents, and list the Stuff you have created. Note you cannot see any Stuff created by other users.
+
+#### Add Stuff page
+
+After logging in, here is the page that allows you to add new Stuff:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/add-stuff-page.png)
+
+#### List Stuff page
+
+After logging in, here is the page that allows you to list all the Stuff you have created:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/list-stuff-page.png)
+
+You click the "Edit" link to go to the Edit Stuff page, shown next.
+
+#### Edit Stuff page
+
+After clicking on the "Edit" link associated with an item, this page displays that allows you to change and save it:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/edit-stuff-page.png)
+
+#### Landing (after Login), Admin user
+
+You can define an "admin" user in the settings.json file. This user, after logging in, gets a special entry in the navbar:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/admin-landing-page.png)
+
+#### Admin page (list all users stuff)
+
+To provide a simple example of a "super power" for Admin users, the Admin page lists all of the Stuff by all of the users:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/admin-list-stuff-page.png)
+
+Note that non-admin users cannot get to this page, even if they type in the URL by hand.
+
+#### Admin Manage database page
+
+This page supports dumping and loading all the collections' data.
+
+![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/admin-manage-database-page.png)
+
+### Collections
+
+The application implements several Collections: Stuffs, AdminProfiles, and UserProfiles. We also wrap the `Meteor.users` collection to manage the creation of Meteor users. All the collection are extensions of `BaseCollection`.
+
+#### BaseCollection
+
+The BaseCollection class wraps the Mongo.collection. It defines several helpful methods.
+
+#### Stuffs
+Each Stuffs document has the following fields: name, quantity, condition, and username.
+
+The Stuffs collection is defined in [imports/api/stuff/StuffCollection.js](https://github.com/ics-software-engineering/matrp/blob/master/app/imports/api/stuff/StuffCollection.js).
+
+The Stuffs collection is initialized in [imports/startup/server/Mongo.js](https://github.com/ics-software-engineering/matrp/blob/master/app/imports/startup/server/Mongo.js).
+
+To support recording additional information about users in the application, we've implemented two additional collections. 
+
+#### AdminProfiles
+Each AdminProfiles document has the following fields: email, firstName, lastName, role, and userID. The `userID` field holds the `Meteor.userID`. 
+
+The AdminProfiles collections is defined in [imports/api/user/AdminProfileCollection.js](https://github.com/ics-software-engineering/matrp/blob/master/app/imports/api/user/AdminProfileCollection.js).
+
+### CSS
+
+The application uses the [React implementation of Semantic UI](http://react.semantic-ui.com/).
+
+### Routing
+
+For display and navigation among its four pages, the application uses [React Router](https://reacttraining.com/react-router/).
+
+Routing is defined in [imports/ui/layouts/App.jsx](https://github.com/ics-software-engineering/matrp/blob/master/app/imports/ui/layouts/App.jsx).
+
+
+### Authentication
+
+For authentication, the application uses the Meteor accounts package.
+
+When the application is run for the first time, a settings file (such as [config/settings.development.json](https://github.com/ics-software-engineering/matrp/blob/master/config/settings.development.json)) should be passed to Meteor. That will lead to a default account being created through the code in [imports/startup/server/accounts.js](https://github.com/ics-software-engineering/matrp/blob/master/app/imports/startup/server/accounts.js).
+
+The application allows users to register and create new accounts at any time.
+
+### Authorization
+
+Only logged-in users can manipulate Stuff documents (but any registered user can manipulate any Stuff document, even if they weren't the user that created it.)
+
+### Configuration
+
+The [config](https://github.com/ics-software-engineering/matrp/tree/master/config) directory is intended to hold settings files.  The repository contains one file: [config/settings.development.json](https://github.com/ics-software-engineering/matrp/blob/master/config/settings.development.json).
+
+The [.gitignore](https://github.com/ics-software-engineering/matrp/blob/master/.gitignore) file prevents a file named settings.production.json from being committed to the repository. So, if you are deploying the application, you can put settings in a file named settings.production.json and it will not be committed.
+
+### Quality Assurance
+
+#### ESLint
+
+The application includes a [.eslintrc](https://github.com/ics-software-engineering/matrp/blob/master/app/.eslintrc) file to define the coding style adhered to in this application. You can invoke ESLint from the command line as follows:
+
+```
+⋊> ~/G/m/app on main ⨯ meteor npm run lint
+
+
+> meteor-application-template-react-production@1.0.3 lint /Users/carletonmoore/GitHub/matrp/app
+> eslint --quiet --fix --ext .jsx --ext .js ./imports
+
 ```
 
 ESLint should run without generating any errors.
 
 It's significantly easier to do development with ESLint integrated directly into your IDE (such as IntelliJ).
 
-#### End to End Testing
+#### Unit tests
 
-BowFolios uses [TestCafe](https://devexpress.github.io/testcafe/) to provide automated end-to-end testing.
-
-The BowFolios end-to-end test code employs the page object model design pattern.  In the [bowfolios tests/ directory](https://github.com/bowfolios/bowfolios/tree/master/app/tests), the file [tests.testcafe.js](https://github.com/bowfolios/bowfolios/blob/master/app/tests/tests.testcafe.js) contains the TestCafe test definitions. The remaining files in the directory contain "page object models" for the various pages in the system (i.e. Home, Landing, Interests, etc.) as well as one component (navbar). This organization makes the test code shorter, easier to understand, and easier to debug.
-
-To run the end-to-end tests in development mode, you must first start up a BowFolios instance by invoking `meteor npm run start` in one console window.
-
-Then, in another console window, start up the end-to-end tests with:
+The unit tests test each of the collections. To run the unit tests use the `test-unit` script.
 
 ```
-meteor npm run testcafe
+⋊> ~/G/m/app on main ⨯ meteor npm run test-unit 
+
+> meteor-application-template-react-production@1.0.3 test-unit /Users/carletonmoore/GitHub/matrp/app
+> cross-env TEST_BROWSER_DRIVER=puppeteer MOCHA_TIMEOUT=150000 meteor test --exclude-archs web.browser.legacy,web.cordova --no-release-check --once --driver-package meteortesting:mocha --port 3100
+
+[[[[[ Tests ]]]]]                             
+
+=> Started proxy.                             
+=> Started MongoDB.                           
+I20210811-10:41:24.385(-10)?                  
+I20210811-10:41:24.506(-10)? --------------------------------
+I20210811-10:41:24.507(-10)? ----- RUNNING SERVER TESTS -----
+I20210811-10:41:24.507(-10)? --------------------------------
+I20210811-10:41:24.507(-10)? 
+I20210811-10:41:24.507(-10)? 
+I20210811-10:41:24.508(-10)? 
+I20210811-10:41:24.508(-10)?   StuffCollection
+I20210811-10:41:24.508(-10)? Monti APM: completed instrumenting the app
+=> Started your app.
+
+=> App running at: http://localhost:3100/
+I20210811-10:41:25.112(-10)?     ✓ Can define and removeIt (705ms)
+I20210811-10:41:25.115(-10)?     ✓ Can define duplicates
+I20210811-10:41:25.337(-10)?     ✓ Can update (222ms)
+I20210811-10:41:25.349(-10)?     ✓ Can dumpOne, removeIt, and restoreOne
+I20210811-10:41:25.354(-10)? 
+I20210811-10:41:25.354(-10)?   AdminProfileCollection
+I20210811-10:41:25.401(-10)? Defining ADMIN Una.Haley70@hotmail.com with password changeme
+I20210811-10:41:25.803(-10)? Defining ADMIN Clarissa.Rippin@hotmail.com with password changeme
+[ snip ]
+I20210811-10:41:34.594(-10)?     ✓ Can define and removeIt (9238ms)
+I20210811-10:41:34.597(-10)? Defining ADMIN Lottie48@yahoo.com with password changeme
+I20210811-10:41:34.682(-10)?     ✓ Cannot define duplicates (87ms)
+I20210811-10:41:34.685(-10)? Defining ADMIN Troy.Ruecker65@hotmail.com with password G4eHBwHJ23FXx7q
+I20210811-10:41:34.980(-10)?     ✓ Can update (298ms)
+I20210811-10:41:34.982(-10)? 
+I20210811-10:41:34.982(-10)?   UserProfileCollection
+I20210811-10:41:35.015(-10)? Defining USER Dominique.OKon@hotmail.com with password changeme
+I20210811-10:41:35.106(-10)? Defining USER Amely_Braun18@yahoo.com with password changeme
+[ snip ]
+I20210811-10:41:43.974(-10)?     ✓ Can define and removeIt (8990ms)
+I20210811-10:41:43.977(-10)? Defining USER Thalia.Hilll@gmail.com with password changeme
+I20210811-10:41:44.066(-10)?     ✓ Cannot define duplicates (92ms)
+I20210811-10:41:44.069(-10)? Defining USER Justus.Wehner@gmail.com with password 9EDF0mDZXMyzrjM
+I20210811-10:41:44.363(-10)?     ✓ Can update (297ms)
+I20210811-10:41:44.365(-10)? 
+I20210811-10:41:44.365(-10)? 
+I20210811-10:41:44.366(-10)?   10 passing (20s)
+I20210811-10:41:44.366(-10)? 
+I20210811-10:41:44.366(-10)? 
+I20210811-10:41:44.366(-10)? --------------------------------
+I20210811-10:41:44.366(-10)? ----- RUNNING CLIENT TESTS -----
+I20210811-10:41:44.366(-10)? --------------------------------
+I20210811-10:41:44.937(-10)? HeadlessChrome/92.0.4512.0
+W20210811-10:41:46.482(-10)? (STDERR) waitFor is deprecated and will be removed in a future release. See https://github.com/puppeteer/puppeteer/issues/6214 for details and how to migrate your code.
+I20210811-10:41:46.488(-10)?   0 passing (0ms)
+I20210811-10:41:46.564(-10)? All tests finished!
+I20210811-10:41:46.564(-10)? 
+I20210811-10:41:46.565(-10)? --------------------------------
+I20210811-10:41:46.565(-10)? SERVER FAILURES: 0
+I20210811-10:41:46.565(-10)? CLIENT FAILURES: 0
+I20210811-10:41:46.565(-10)? --------------------------------
+⋊> ~/G/m/app on main ⨯
 ```
 
-You will see browser windows appear and disappear as the tests run.  If the tests finish successfully, you should see the following in your second console window:
+#### Integration tests
+
+To test the ValidatedMethods use the integration test script `test-integration`.
+```
+⋊> ~/G/m/app on main ⨯ meteor npm run test-integration 
+
+> meteor-application-template-react-production@1.0.3 test-integration /Users/carletonmoore/GitHub/matrp/app
+> cross-env METEOR_NO_RELEASE_CHECK=1 TEST_BROWSER_DRIVER=puppeteer meteor test --full-app --once --driver-package meteortesting:mocha --port 3100
+
+[[[[[ Tests ]]]]]                             
+
+=> Started proxy.                             
+=> Started MongoDB.                           
+I20210811-10:51:38.533(-10)? Cannot initialize the database!  Please invoke meteor with a settings file.
+I20210811-10:51:38.675(-10)? 
+I20210811-10:51:38.676(-10)? --------------------------------
+I20210811-10:51:38.676(-10)? --- RUNNING APP SERVER TESTS ---
+I20210811-10:51:38.676(-10)? --------------------------------
+I20210811-10:51:38.676(-10)? 
+I20210811-10:51:38.676(-10)? 
+I20210811-10:51:38.677(-10)? 
+I20210811-10:51:38.677(-10)?   0 passing (0ms)
+I20210811-10:51:38.677(-10)? 
+I20210811-10:51:38.677(-10)? 
+I20210811-10:51:38.677(-10)? --------------------------------
+I20210811-10:51:38.677(-10)? --- RUNNING APP CLIENT TESTS ---
+I20210811-10:51:38.677(-10)? --------------------------------
+I20210811-10:51:38.880(-10)? Monti APM: completed instrumenting the app
+=> Started your app.
+
+=> App running at: http://localhost:3100/
+I20210811-10:51:39.208(-10)? HeadlessChrome/92.0.4512.0
+I20210811-10:51:40.838(-10)? Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+I20210811-10:51:41.794(-10)? 
+I20210811-10:51:41.795(-10)?   StuffCollection Meteor Methods
+W20210811-10:51:42.108(-10)? (STDERR) waitFor is deprecated and will be removed in a future release. See https://github.com/puppeteer/puppeteer/issues/6214 for details and how to migrate your code.
+I20210811-10:51:42.348(-10)?     ✓ Can define, update, and removeIt (551ms)
+I20210811-10:51:42.349(-10)?   AdminProfileCollection Meteor Methods
+I20210811-10:51:42.806(-10)? Defining ADMIN Lennie58@gmail.com with password changeme
+I20210811-10:51:42.927(-10)?     ✓ Can define, update, and removeIt (578ms)
+I20210811-10:51:42.929(-10)?   UserProfileCollection Meteor Methods
+I20210811-10:51:43.373(-10)? Defining USER Desmond.Schimmel@yahoo.com with password changeme
+I20210811-10:51:43.483(-10)?     ✓ Can define, update, and removeIt (554ms)
+I20210811-10:51:43.484(-10)?   3 passing (2s)
+I20210811-10:51:43.568(-10)? All tests finished!
+I20210811-10:51:43.568(-10)? 
+I20210811-10:51:43.568(-10)? --------------------------------
+I20210811-10:51:43.568(-10)? APP SERVER FAILURES: 0
+I20210811-10:51:43.569(-10)? APP CLIENT FAILURES: 0
+I20210811-10:51:43.569(-10)? --------------------------------
+⋊> ~/G/m/app on main ⨯         
+```
+
+#### Acceptance tests
+
+The MATRP acceptance tests ensure that all the application's pages render. Run the acceptance test using the `test-acceptance` script. 
 
 ```
-$ meteor npm run testcafe
+⋊> ~/G/m/app on main ⨯ meteor npm run test-acceptance
 
-> bowfolios@ testcafe /Users/philipjohnson/github/bowfolios/bowfolios/app
-> testcafe chrome tests/*.testcafe.js
+> meteor-application-template-react-production@1.0.3 test-acceptance /Users/carletonmoore/GitHub/matrp/app
+> meteor reset && testcafe chrome:headless tests/*.testcafe.js -q --app "meteor npm run start"
 
+Project reset.                                
  Running tests in:
- - Chrome 86.0.4240.111 / macOS 10.15.7
+ - Chrome 92.0.4515.131 / macOS 10.15.7
 
- Bowfolios localhost test with default db
- ✓ Test that landing page shows up
- ✓ Test that signin and signout work
- ✓ Test that signup page, then logout works
- ✓ Test that profiles page displays
- ✓ Test that interests page displays
- ✓ Test that projects page displays
- ✓ Test that home page display and profile modification works
- ✓ Test that addProject page works
- ✓ Test that filter page works
-
-
- 9 passed (40s)
-
- $
-```
-
-You can also run the testcafe tests in "continuous integration mode".  This mode is appropriate when you want to run the tests using a continuous integration service like Jenkins, Semaphore, CircleCI, etc.  In this case, it is problematic to already have the server running in a separate console, and you cannot have the browser window appear and disappear.
-
-To run the testcafe tests in continuous integration mode, first ensure that BowFolios is not running in any console.
-
-Then, invoke `meteor npm run testcafe-ci`.  You will not see any windows appear.  When the tests finish, the console should look like this:
-
-```
-$ meteor npm run testcafe-ci
-
-> bowfolios@ testcafe-ci /Users/philipjohnson/github/bowfolios/bowfolios/app
-> testcafe chrome:headless tests/*.testcafe.js -q --app "meteor npm run start"
-
- Running tests in:
- - Chrome 86.0.4240.111 / macOS 10.15.7
-
- Bowfolios localhost test with default db
+ matrp localhost test with default db
+Waiting 15 seconds before running LandingPage.isDisplayed().
+Waiting 15 seconds before running LandingPage.isDisplayed().
+Waiting 15 seconds before running LandingPage.isDisplayed().
+Waiting 15 seconds before running LandingPage.isDisplayed().
  ✓ Test that landing page shows up (unstable)
- ✓ Test that signin and signout work
- ✓ Test that signup page, then logout works
- ✓ Test that profiles page displays
- ✓ Test that interests page displays
- ✓ Test that projects page displays
- ✓ Test that home page display and profile modification works
- ✓ Test that addProject page works
- ✓ Test that filter page works
+ ✓ Test that sign in and sign out work
+ ✓ Test that sign up and sign out work
+ ✓ Test that user pages show up
+ ✓ Test that admin pages show up
 
 
- 9 passed (56s)
-
-$
+ 5 passed (1m 45s)
+⋊> ~/G/m/app on main ⨯   
 ```
 
-All the tests pass, but the first test is marked as "unstable". At the time of writing, TestCafe fails the first time it tries to run a test in this mode, but subsequent attempts run normally. To prevent the test run from failing due to this problem with TestCafe, we enable [testcafe quarantine mode](https://devexpress.github.io/testcafe/documentation/guides/basic-guides/run-tests.html#quarantine-mode).
+#### Running all the tests
 
-The only impact of quarantine mode should be that the first test is marked as "unstable".
+You can run ESLint and all the tests using the `test-all` script.
 
-## From mockup to production
+#### Continuous Integration using GitHub Actions
 
-Bowfolios is meant to illustrate the use of Meteor for developing an initial proof-of-concept prototype.  For a production application, several additional security-related changes must be implemented:
+MATRP uses GitHub Actions to run ESLint and all the tests every time code is pushed to `main`.
 
-* Use of email-based password specification for users, and/or use of an alternative authentication mechanism.
-* Use of https so that passwords are sent in encrypted format.
-* Removal of the insecure package, and the addition of Meteor Methods to replace client-side DB updates.
+## Screencasts for Meteor Application Template React
 
-(Note that these changes do not need to be implemented for ICS 314, although they are relatively straightforward to accomplish.)
+For more information about this system, please watch one or more of the following screencasts. Note that the current source code might differ slightly from the code in these screencasts, but the changes should be very minor.
 
-## Continuous Integration
-
-![ci-badge](https://github.com/bowfolios/bowfolios/workflows/ci-bowfolios/badge.svg)
-
-BowFolios uses [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions) to automatically run ESLint and TestCafe each time a commit is made to the default branch.  You can see the results of all recent "workflows" at [https://github.com/bowfolios/bowfolios/actions](https://github.com/bowfolios/bowfolios/actions).
-
-The workflow definition file is quite simple and is located at
-[.github/workflows/ci.yml](https://github.com/bowfolios/bowfolios/blob/master/.github/workflows/ci.yml).
-
-## Development History
-
-The development process for BowFolios conformed to [Issue Driven Project Management](http://courses.ics.hawaii.edu/ics314f19/modules/project-management/) practices. In a nutshell:
-
-* Development consists of a sequence of Milestones.
-* Each Milestone is specified as a set of tasks.
-* Each task is described using a GitHub Issue, and is assigned to a single developer to complete.
-* Tasks should typically consist of work that can be completed in 2-4 days.
-* The work for each task is accomplished with a git branch named "issue-XX", where XX is replaced by the issue number.
-* When a task is complete, its corresponding issue is closed and its corresponding git branch is merged into master.
-* The state (todo, in progress, complete) of each task for a milestone is managed using a GitHub Project Board.
-
-The following sections document the development history of BowFolios.
-
-### Milestone 1: Mockup development
-
-The goal of Milestone 1 was to create a set of HTML pages providing a mockup of the pages in the system.
-
-Milestone 1 was managed using [BowFolio GitHub Project Board M1](https://github.com/bowfolios/bowfolios/projects/1):
-
-![](images/project-board-1.png)
-
-### Milestone 2: Data model development
-
-The goal of Milestone 2 was to implement the data model: the underlying set of Mongo Collections and the operations upon them that would support the BowFolio application.
-
-Milestone 2 was managed using [BowFolio GitHub Project Board M2](https://github.com/bowfolios/bowfolios/projects/2):
-
-![](images/project-board-2.png)
-
-## Milestone 3: Final touches
-
-The goal of Milestone 3 was to clean up the code base and fix minor UI issues.
-
-Milestone 3 was managed using [BowFolio GitHub Project Board M3](https://github.com/bowfolios/bowfolios/projects/3):
-
-![](images/project-board-3.png)
-
-As of the time of writing, this screenshot shows that there is an ongoing task (i.e. this writing).
-
-## Walkthrough videos
-
-BowFolios is intended as a model of how an ICS 314 project could be organized and executed. Here are videos that walk you through various aspects of the system:
-
-* [BowFolios Part 1: Application Overview (5 min)](https://www.youtube.com/watch?v=gr55MMWD8ok)
-* [BowFolios Part 2: Application Structure and Control Flow (14 min)](https://www.youtube.com/watch?v=LYh06HSYv54)
-* [BowFolios Part 3: Data Model, Data Initialization, Publications and Subscriptions (22 min)](https://www.youtube.com/watch?v=2F2Cw5Ipubc)
-* [BowFolios Part 4: Forms and Meteor Methods (20 min)](https://www.youtube.com/watch?v=5qim9mXpbTM)
-* [BowFolios Part 5: Loading data using Assets (8 min)](https://www.youtube.com/watch?v=NzrTzBPCJPo)
-* [BowFolios Part 6: Design Patterns in BowFolios (22 min)](https://www.youtube.com/watch?v=yP-t44HBCPQ)
-* [BowFolios Part 7: End-to-End testing in BowFolios (24 min)](https://www.youtube.com/watch?v=B8TSiCLBeaA)
-
-## Example enhancements
-
-There are a number of simple enhancements you can make to the system to become better acquainted with the codebase:
-
-* Display an email icon that links to a mailto: for each user in the profile page.
-* Display the home page for each project as a home icon. Click on it to visit the Project's home page.
-* Add social media accounts to the profile (facebook, twitter, instagram) and show the associated icon in the Profile.
-* The system supports the definition of users with an Admin role, but there are no Admin-specific capabilities. Implement some Admin-specific functions, such as the ability to delete users or add/modify/delete Interests.
-* There is no way to edit or delete a project definition. Add this ability.
-* It would be nice for users to only be able to edit the Projects that they have created.  Add an "owner" field to the Project collection, and then only allow a user to edit a Project definition if they own it.
-* The error message associated with trying to define a new Project with an existing Project name is uninformative. Try it out for yourself to see what happens. Fix this by improving the associated Meteor Method to "catch" errors of this type and re-throw with a more informative error message.
-* The testcafe acceptance tests only test successful form submissions. Add a test in which you fill out a form incorrectly (perhaps omitting a required field) and then test to ensure that the form does not submit successfully.
-
-## Team
-***
-  ICS students at the University of Hawaii at Manoa.
- * [Feimei Chen](https://feimeichen.github.io/)
- * [Rainier Javillo](https://rainllo.github.io/)
-
-BowFolios is designed, implemented, and maintained by [Philip Johnson](https://philipmjohnson.org).
-
-
-
-
-
-
-
+  * [Walkthrough of system user interface (5 min)](https://www.youtube.com/watch?v=shYgqco1AUs)
+  * [Data and accounts structure and initialization (15 min)](https://www.youtube.com/watch?v=p9dvM6MdCGs)
+  * [Navigation, routing, pages, components (23 min)](https://www.youtube.com/watch?v=DAv0UjS0VjQ)
+  * [Forms (25 min)](https://www.youtube.com/watch?v=z02076QgDA8)
+  * [Authorization, authentication, and roles (10 min)](https://www.youtube.com/watch?v=_i1dgcP0zoI)

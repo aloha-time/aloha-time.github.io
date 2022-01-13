@@ -1,10 +1,8 @@
-title: Aloha Time
-description: A website to help keep track of volunteering
+title: MATRP
+description: A template for quickly starting Meteor application development
 google_analytics:
-show_downloads: false
+show_downloads: true
 theme: jekyll-theme-cayman
-github:
-  is_project_page: true
-  repository_url: https://github.com/aloha-time/aloha-time
+
 gems:
   - jekyll-mentions
