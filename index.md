@@ -332,6 +332,7 @@ There are a number of simple enhancements you can make to the system to become b
 * The testcafe acceptance tests only test successful form submissions. Add a test in which you fill out a form incorrectly (perhaps omitting a required field) and then test to ensure that the form does not submit successfully.
 
 ## Team
+***
   ICS students at the University of Hawaii at Manoa.
  * [Feimei Chen](https://feimeichen.github.io/)
 
