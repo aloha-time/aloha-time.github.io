@@ -335,6 +335,7 @@ There are a number of simple enhancements you can make to the system to become b
 ***
   ICS students at the University of Hawaii at Manoa.
  * [Feimei Chen](https://feimeichen.github.io/)
+ * [Rainier Javillo](https://rainllo.github.io/)
 
 BowFolios is designed, implemented, and maintained by [Philip Johnson](https://philipmjohnson.org).
 
