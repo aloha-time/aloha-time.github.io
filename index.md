@@ -463,6 +463,7 @@ For more information about this system, please watch one or more of the followin
   * [Chad Oshiro](https://chadoshiro.github.io/)
   * [Feimer Chen](https://feimeichen.github.io/)  
   * [Hansen Cabanero](https://hanseca.github.io/)
+  * [Jonathan Valencia](https://jon-valencia.github.io/)
   * [Marissa Halim](https://marissahalim.github.io/)
   * [Quinn Bianchi-Lawson](https://quinnbl.github.io/)
   * [Rainier Javillo](https://rainllo.github.io/)
