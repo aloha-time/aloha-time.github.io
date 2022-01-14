@@ -1,10 +1,10 @@
 
 # TABLE OF CONTENTS
 ***
-* [Overview](##Overview)
-* [User Guide](##Installation)
-* [Development History](##Development History )
-* [The Team](##The Team)
+* [Overview](#Overview)
+* [User Guide](#Installation)
+* [Development History](#Development History )
+* [The Team](#The Team)
  
 ## Overview 
  Aloha-time makes it easy for volunteers to find organizations in need, and for organizations to find qualified volunteers.
