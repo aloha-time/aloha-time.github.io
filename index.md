@@ -3,7 +3,7 @@
 ***
 * [Overview](#Overview)
 * [User Guide](#Installation)
-* [UI](#Landing-page)
+* [User Interface](#Landing-page)
 * [Team](#The-Team)
 * [Development History](#Development-History )
  
