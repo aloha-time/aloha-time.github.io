@@ -457,3 +457,12 @@ For more information about this system, please watch one or more of the followin
   * [Navigation, routing, pages, components (23 min)](https://www.youtube.com/watch?v=DAv0UjS0VjQ)
   * [Forms (25 min)](https://www.youtube.com/watch?v=z02076QgDA8)
   * [Authorization, authentication, and roles (10 min)](https://www.youtube.com/watch?v=_i1dgcP0zoI)
+
+## The Team
+
+  * [Chad Oshiro](https://chadoshiro.github.io/)
+  * [Feimer Chen](https://feimeichen.github.io/)  
+  * [Hansen Cabanero](https://hanseca.github.io/)
+  * [Marissa Halim](https://marissahalim.github.io/)
+  * [Quinn Bianchi-Lawson](https://quinnbl.github.io/)
+  * [Rainier Javillo](https://rainllo.github.io/)
