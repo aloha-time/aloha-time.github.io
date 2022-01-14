@@ -1,4 +1,15 @@
 
+# TABLE OF CONTENTS
+***
+* [Overview](##overview)
+* [User Guide](## Installation)
+* [Development History](## Development History )
+* [The Team](## The Team)
+ 
+## Overview 
+ Aloha-time makes it easy for volunteers to find organizations in need, and for organizations to find qualified volunteers.
+
+
 ![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/landing-page.png)
 
 MATRP, an extension of [meteor-application-template-react](https://ics-software-engineering.github.io/meteor-application-template-react/), is a sample Meteor 2.3 application that illustrates:
