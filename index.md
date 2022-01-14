@@ -3,8 +3,7 @@
 ***
 * [Overview](#Overview)
 * [User Guide](#Installation)
-* [Development History]
-* [The Team]
+* [Team](*The Team)
  
 ## Overview 
  Aloha-time makes it easy for volunteers to find organizations in need, and for organizations to find qualified volunteers.
