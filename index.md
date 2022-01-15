@@ -4,8 +4,8 @@
 * [Overview](#overview)
 * [User Guide](#installation)
 * [User Interface](#landing-page)
-* [Development History](#development-History)
-* [The Team](#the-Team)
+* [Development History](#development-history)
+* [The Team](#the-team)
 
  
 ## Overview 
