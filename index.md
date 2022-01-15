@@ -9,7 +9,7 @@
 
  
 ## Overview 
- Aloha-time makes it easy for volunteers to find organizations in need, and for organizations to find qualified volunteers. It can be based on a volunteer's interest or hobby to find a suitable organization that benifit to organziation and volunteer to finish task more easier and faster. Also, In addition, Aloha-Time tracks and records the time you volunteer to help others, even though this non-profit, excellent volunteers should know and be respected. 
+ Aloha-time makes it easy for volunteers to find organizations in need, and for organizations to find qualified volunteers. It can be based on a volunteer's interest or hobby to find a suitable organization that benifit to organziation and volunteer to finish task more easier and faster. Also, In addition, Aloha-Time tracks and records the time you volunteer to help others, even though this non-profit, excellent volunteers should be know and respected. 
 
 ![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/landing-page.png)
 
