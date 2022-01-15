@@ -10,7 +10,9 @@
  
 ## Overview 
  Aloha-time makes it easy for volunteers to find organizations in need, and for organizations to find qualified volunteers. It can be based on a volunteer's interest or hobby and other situations to find a suitable organization that benifit to organziation and volunteer to finish task more easier and faster. For example, some volunteer prefer to remote work due to COVID-19, Aloha-time can prevent that those volunteers get a face to face task.   In addition, Aloha-Time tracks and records the time you volunteer to help others, even though this non-profit, excellent volunteers should be know and respected. 
-
+ * which orgniaztion wants more volunteers ?
+ * who want to became volunteers and Information of them ?
+ 
 ![](https://raw.githubusercontent.com/ics-software-engineering/matrp/master/doc/landing-page.png)
 
 MATRP, an extension of [meteor-application-template-react](https://ics-software-engineering.github.io/meteor-application-template-react/), is a sample Meteor 2.3 application that illustrates:
