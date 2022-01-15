@@ -1,7 +1,7 @@
 
 # TABLE OF CONTENTS
 ***
-* [Overview](##Overview)
+* [Overview](#Overview)
 * [User Guide](#Installation)
 * [User Interface](#Landing-page)
 * [Development History](#Development-History)
