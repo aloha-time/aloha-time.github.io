@@ -9,7 +9,7 @@
 
  
 ## Overview 
- Aloha-time makes it easy for volunteers to find organizations in need, and for organizations to find qualified volunteers. It can be based on a volunteer's interest or hobby and other situations to find a suitable organization that benifit to organziation and volunteer to finish task more easier and faster. For example, some volunteer prefer to remote work due to COVID-19, Aloha-time can prevent that those volunteers get a face to face task.   In addition, Aloha-Time tracks and records the time you volunteer to help others, even though this non-profit, excellent volunteers should be know and respected. 
+ Aloha-time makes it easy for volunteers to find organizations in need, and for organizations to find qualified volunteers. It can be based on a volunteer's interest or hobby and other situations to find a suitable organization that benifits organziation and volunteer to finish task more easier and faster. For example, some volunteer prefer to remote work due to COVID-19, Aloha-time can prevent that those volunteers get a face to face task.   In addition, Aloha-Time tracks and records the time you volunteer to help others, even though this non-profit, excellent volunteers should be know and respected. 
  
   The goals of our project is to answer these questions:
  * Which organization needs more volunteers?
