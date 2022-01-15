@@ -1,11 +1,11 @@
 
 # TABLE OF CONTENTS
 ***
-* [Overview](#Overview)
-* [User Guide](#Installation)
-* [User Interface](#Landing-page)
-* [Development History](#Development-History)
-* [The Team](#The-Team)
+* [Overview](#overview)
+* [User Guide](#installation)
+* [User Interface](#landing-page)
+* [Development History](#development-History)
+* [The Team](#the-Team)
 
  
 ## Overview 
