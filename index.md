@@ -475,7 +475,7 @@ For more information about this system, please watch one or more of the followin
 ## The Team
 
   * [Chad Oshiro](https://chadoshiro.github.io/)
-  * [Feimer Chen](https://feimeichen.github.io/)  
+  * [Feimei Chen](https://feimeichen.github.io/)  
   * [Hansen Cabanero](https://hanseca.github.io/)
   * [Jonathan Valencia](https://jon-valencia.github.io/)
   * [Marissa Halim](https://marissahalim.github.io/)
