@@ -1,5 +1,5 @@
 
-# TABLE OF CONTENTS
+# Aloha Time
 ***
 * [Overview](#overview)
 * [Deployment](#deployment)
