@@ -22,7 +22,7 @@
 
 The website has been deployed with Digital Ocean and can be accessed through the following link:
 
-https://aloha-time.xyz/#/
+[https://aloha-time.xyz/#/](https://aloha-time.xyz/#/)
 
 ## Installation
 
@@ -175,19 +175,19 @@ Opportunities are listed as cards with a short summary about them. If you are in
 
 Note that we are still logged in as the Admin. As such, each opportunity card displays a *Delete* button and their owner at the bottom. These are not visible if logged in with a volunteer or organization account.
 
-##### Filter 
+#### Filter 
 
 Opportunities can be filtered by their title, category, age-group and environment type:
 
 ![](doc/aloha-time-filter.png)
 
-##### Map
+#### Map
 
 Opportunities are also displayed on the map as markers. These markers are clickable and clicking on one will display their opportunity card:
 
 ![](doc/aloha-time-map.png)
 
-#### Calendar
+#### Calendar page
 
 Clicking the *View Calendar Schedule* button at the top of the Browse Opportunities page will display the schedule of each opportunity on a monthly, weekly, daily or agenda view:
 
