@@ -283,5 +283,4 @@ This page displays all the organizations that have partnered with Volunteer Ally
   * [Hansen Cabanero](https://hanseca.github.io/)
   * [Jonathan Valencia](https://jon-valencia.github.io/)
   * [Marissa Halim](https://marissahalim.github.io/)
-  * [Quinn Bianchi-Lawson](https://quinnbl.github.io/)
   * [Rainier Javillo](https://rainllo.github.io/)
