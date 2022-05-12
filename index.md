@@ -38,7 +38,7 @@ The goal of this template is to help you get quickly started doing Meteor develo
 
 First, [install Meteor](https://www.meteor.com/install).
 
-Second, go to [https://github.com/ics-software-engineering/matrp](https://github.com/ics-software-engineering/matrp), and click the "Use this template" button. Complete the dialog box to create a new repository that you own that is initialized with this template's files.
+Second, go to [https://github.com/aloha-time/aloha-time](https://github.com/aloha-time/aloha-time), and click the "Use this template" button. Complete the dialog box to create a new repository that you own that is initialized with this template's files.
 
 Third, go to your newly created repository, and click the "Clone or download" button to download your new GitHub repo to your local file system.  Using [GitHub Desktop](https://desktop.github.com/) is a great choice if you use MacOS or Windows.
 
@@ -50,7 +50,7 @@ $ meteor npm install
 
 ## Running the system
 
-Once the libraries are installed, you can run the application by invoking the "start" script in the [package.json file](https://github.com/ics-software-engineering/matrp/blob/master/app/package.json):
+Once the libraries are installed, you can run the application by invoking the "start" script in the [package.json file](https://github.com/aloha-time/aloha-time/blob/main/app/package.json):
 
 ```
 $ meteor npm run start
@@ -62,24 +62,62 @@ The first time you run the app, it will create some default users and data. Here
 ⋊> ~/G/m/app on main ⨯ meteor npm run start
 
 
-> meteor-application-template-react-production@1.0.3 start /Users/carletonmoore/GitHub/matrp/app
+> meteor-application-template-react-production@1.0.3 start /Users/user/GitHub/aloha-time/app
 > meteor --no-release-check --exclude-archs web.browser.legacy,web.cordova --settings ../config/settings.development.json
 
-[[[[[ ~/GitHub/matrp/app ]]]]]                
+[[[[[ ~/GitHub/aloha-time/app ]]]]]                
 
 => Started proxy.                             
 => Started MongoDB.                           
-I20210801-10:48:51.367(-10)? Creating the default user(s)
-I20210801-10:48:51.504(-10)?   Creating user admin@foo.com with role ADMIN.
-I20210801-10:48:51.537(-10)? Defining ADMIN admin@foo.com with password changeme
-I20210801-10:48:51.544(-10)?   Creating user john@foo.com with role USER.
-I20210801-10:48:51.704(-10)? Defining USER john@foo.com with password changeme
-I20210801-10:48:51.710(-10)? Creating default data.
-I20210801-10:48:51.710(-10)?   Adding: Basket (john@foo.com)
-I20210801-10:48:51.747(-10)?   Adding: Bicycle (john@foo.com)
-I20210801-10:48:51.753(-10)?   Adding: Banana (admin@foo.com)
-I20210801-10:48:51.756(-10)?   Adding: Boogie Board (admin@foo.com)
-I20210801-10:48:51.864(-10)? Monti APM: completed instrumenting the app
+I20220511-20:17:41.967(-10)? Creating the default user(s)
+I20220511-20:17:42.041(-10)?   Creating user admin@foo.com with role ADMIN.
+I20220511-20:17:42.105(-10)? Defining ADMIN admin@foo.com with password changeme
+I20220511-20:17:42.108(-10)? Creating the default organization(s)
+I20220511-20:17:42.108(-10)?   Creating organization HIFoodBank with role ORGANIZATION.
+I20220511-20:17:42.218(-10)? Defining ORGANIZATION HIFoodBank with password changeme
+I20220511-20:17:42.221(-10)?   Creating organization SaveTheAnimals with role ORGANIZATION.
+I20220511-20:17:42.317(-10)? Defining ORGANIZATION SaveTheAnimals with password changeme
+I20220511-20:17:42.319(-10)?   Creating organization HelpIsOnTheWay with role ORGANIZATION.
+I20220511-20:17:42.411(-10)? Defining ORGANIZATION HelpIsOnTheWay with password changeme
+I20220511-20:17:42.413(-10)?   Creating organization MakeAWishHI with role ORGANIZATION.
+I20220511-20:17:42.502(-10)? Defining ORGANIZATION MakeAWishHI with password changeme
+I20220511-20:17:42.504(-10)?   Creating organization AlohaAnimal with role ORGANIZATION.
+I20220511-20:17:42.599(-10)? Defining ORGANIZATION AlohaAnimal with password changeme
+I20220511-20:17:42.603(-10)?   Creating organization HUGS4Hawaii with role ORGANIZATION.
+I20220511-20:17:42.693(-10)? Defining ORGANIZATION HUGS4Hawaii with password changeme
+I20220511-20:17:42.695(-10)?   Creating organization BBBSHawaii with role ORGANIZATION.
+I20220511-20:17:42.792(-10)? Defining ORGANIZATION BBBSHawaii with password changeme
+I20220511-20:17:42.794(-10)?   Creating organization H4H with role ORGANIZATION.
+I20220511-20:17:42.887(-10)? Defining ORGANIZATION H4H with password changeme
+I20220511-20:17:42.889(-10)?   Creating organization Malama with role ORGANIZATION.
+I20220511-20:17:42.982(-10)? Defining ORGANIZATION Malama with password changeme
+I20220511-20:17:42.984(-10)?   Creating organization SaveTheBeaches with role ORGANIZATION.
+I20220511-20:17:43.081(-10)? Defining ORGANIZATION SaveTheBeaches with password changeme
+I20220511-20:17:43.082(-10)?   Creating organization Fishpond with role ORGANIZATION.
+I20220511-20:17:43.177(-10)? Defining ORGANIZATION Fishpond with password changeme
+I20220511-20:17:43.179(-10)?   Creating organization Care4TheElders with role ORGANIZATION.
+I20220511-20:17:43.280(-10)? Defining ORGANIZATION Care4TheElders with password changeme
+I20220511-20:17:43.284(-10)?   Creating organization Food4All with role ORGANIZATION.
+I20220511-20:17:43.408(-10)? Defining ORGANIZATION Food4All with password changeme
+I20220511-20:17:43.412(-10)?   Creating organization HMoW with role ORGANIZATION.
+I20220511-20:17:43.529(-10)? Defining ORGANIZATION HMoW with password changeme
+I20220511-20:17:43.531(-10)?   Creating organization Books4Kids with role ORGANIZATION.
+I20220511-20:17:43.630(-10)? Defining ORGANIZATION Books4Kids with password changeme
+I20220511-20:17:43.632(-10)?   Creating organization PaPHawaii with role ORGANIZATION.
+I20220511-20:17:43.728(-10)? Defining ORGANIZATION PaPHawaii with password changeme
+I20220511-20:17:43.730(-10)?   Creating organization SalvArmy with role ORGANIZATION.
+I20220511-20:17:43.825(-10)? Defining ORGANIZATION SalvArmy with password changeme
+I20220511-20:17:43.828(-10)? Creating the default Volunteer(s)
+I20220511-20:17:43.828(-10)?   Creating volunteer Eric with role VOLUNTEER.
+I20220511-20:17:43.932(-10)? Defining VOLUNTEER Eric with password changeme
+I20220511-20:17:43.933(-10)?   Creating volunteer john@foo.com with role VOLUNTEER.
+I20220511-20:17:44.025(-10)? Defining VOLUNTEER john@foo.com with password changeme
+I20220511-20:17:44.031(-10)? Creating default opportunities.
+I20220511-20:17:44.032(-10)?   Adding: Health Help (HelpIsOnTheWay)
+I20220511-20:17:44.044(-10)?   Adding: Beach Cleanup (MakeAWishHI)
+I20220511-20:17:44.048(-10)?   Adding: Food Drive (HIFoodBank)
+I20220511-20:17:44.054(-10)?   Adding: Virtual Dog Walk (SaveTheAnimals)
+I20220511-20:17:44.108(-10)? Monti APM: completed instrumenting the app
 => Started your app.
 
 => App running at: http://localhost:3000/
