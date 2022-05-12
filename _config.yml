@@ -1,8 +1,10 @@
 title: Aloha Time
 description: A website that helps to match volunteers with organizations, as well as to keep track of volunteering hours.
 google_analytics:
-show_downloads: true
+show_downloads: false
 theme: jekyll-theme-cayman
-
+github:
+  is_project_page: true
+  repository_url: https://github.com/aloha-time/aloha-time
 gems:
   - jekyll-mentions
